@@ -1,0 +1,57 @@
+/* ---------- HIDE: engagement ---------- */
+
+/* Likes */
+html.xu-on.xu-hide-likes [data-testid="like"] [data-testid="app-text-transition-container"],
+html.xu-on.xu-hide-likes [data-testid="unlike"] [data-testid="app-text-transition-container"],
+html.xu-on.xu-hide-likes a[href$="/likes"] {
+  display: none !important;
+}
+
+/* Comments (reply counts) */
+html.xu-on.xu-hide-comments [data-testid="reply"] [data-testid="app-text-transition-container"] {
+  display: none !important;
+}
+
+/* Impressions / views */
+html.xu-on.xu-hide-impressions a[href*="/analytics"],
+html.xu-on.xu-hide-impressions [data-testid="viewCount"] {
+  display: none !important;
+}
+
+/* Reposts and quotes */
+html.xu-on.xu-hide-reposts [data-testid="retweet"] [data-testid="app-text-transition-container"],
+html.xu-on.xu-hide-reposts [data-testid="unretweet"] [data-testid="app-text-transition-container"],
+html.xu-on.xu-hide-reposts a[href$="/retweets"],
+html.xu-on.xu-hide-reposts a[href$="/retweets/with_comments"],
+html.xu-on.xu-hide-reposts a[href$="/quotes"] {
+  display: none !important;
+}
+
+/* ---------- BLUR: identity ---------- */
+
+/* Display name + @handle (leaf text only, so blur never stacks) */
+html.xu-on.xu-blur-name [data-testid="User-Name"] a:not([href*="/status/"]) span:not(:has(span)),
+html.xu-on.xu-blur-name [data-testid="UserName"] span:not(:has(span)),
+html.xu-on.xu-blur-name [data-testid="socialContext"] {
+  filter: blur(6px) !important;
+  user-select: none !important;
+}
+
+/* Verified / other badges next to the name */
+html.xu-on.xu-blur-badge [data-testid="User-Name"] svg,
+html.xu-on.xu-blur-badge [data-testid="UserName"] svg,
+html.xu-on.xu-blur-badge [data-testid="icon-verified"] {
+  filter: blur(4px) !important;
+}
+
+/* Profile picture */
+html.xu-on.xu-blur-avatar [data-testid="Tweet-User-Avatar"],
+html.xu-on.xu-blur-avatar [data-testid^="UserAvatar-Container"] {
+  filter: blur(10px) !important;
+}
+
+/* Time of the post */
+html.xu-on.xu-blur-time article time {
+  filter: blur(5px) !important;
+  user-select: none !important;
+}
